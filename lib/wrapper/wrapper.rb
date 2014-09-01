@@ -12,7 +12,7 @@ require File.dirname(__FILE__) + "/authentication"
 
 class Discogs::Wrapper
 
-  include Authentication
+  include Discogs::Authentication
 
   @@root_host = "http://api.discogs.com"
 

@@ -1,6 +1,6 @@
 require 'oauth'
 
-module Authentication
+module Discogs::Authentication
 
   # Retrieves an OAuth request token from the Discogs server.
   # @!macro [new] app_key
@@ -23,7 +23,7 @@ module Authentication
   # @!macro [new] verifier
   #   @param request_token [OAuth::RequestToken] request token
   #   @param verifier [String] verifier token
-  # @return [OAuth::AccessToken] 
+  # @return [OAuth::AccessToken]
   def authenticate(request_token, verifier)
     if request_token.is_a?(OAuth::RequestToken)
       @access_token = request_token.get_access_token(:oauth_verifier => verifier)
